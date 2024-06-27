@@ -1,0 +1,47 @@
+/* src/components/Navbar.css */
+
+/* Estilização do header */
+.marketplace-header {
+    display: flex;
+    background-color: #0d6efd; 
+    text-align: center;
+    height: 40px;
+    padding: 10px 0; /* Espaçamento superior e inferior */
+    border-bottom: 1px solid #ddd; /* Borda inferior */
+}
+  
+/* Estilização do navbar */
+.custom-navbar {
+    display: flex;
+    height: 20px;
+    padding: 0;
+    background-color: #0d6efd; /* Azul claro */
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+  
+/* Estilização da logo */
+.logoOpen {
+    width: auto; /* Ajuste o tamanho da logo conforme necessário */
+    height: 20px;
+}
+  
+/* Estilização do texto do marketplace */
+.marketplace-text {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 5px;
+}
+  
+/* Estilização do link Meus Serviços */
+.meus-servicos-link {
+    color: #EEEDEB !important;
+    font-size: 14px !important;
+}
+  
+.meus-servicos-link:hover {
+    color: white !important; /* Azul no hover */
+
+}
+  
