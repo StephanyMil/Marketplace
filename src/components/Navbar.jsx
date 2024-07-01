@@ -1,11 +1,12 @@
 // src/components/Navbar.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="navbar bg-primary" data-bs-theme="dark" style={{ padding: '1rem 0' }}>
+    <nav className="navbar bg-primary" data-bs-theme="dark" style={{ padding: '1px 0' }}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="/home" style={{ display: 'flex', alignItems: 'center' }}>
+        <Link className="navbar-brand" to="/">
           <img
             src='public/assets/logo-only-white.png'
             alt="Logo"
@@ -14,12 +15,12 @@ const Navbar = () => {
             style={{ marginRight: '0.5rem' }}
           />
           Marketplace
-        </a>
+        </Link>
         <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{ color: '#fff' }}>
           <li className="nav-item">
-            <a className="nav-link" href="/sevices">
+            <Link className="nav-link" to="/services">
               Meus Serviços
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

@@ -1,5 +1,6 @@
 // src/App.jsx
 import React from 'react';
+import './index.css';
 import Navbar from './components/Navbar';
 import ServiceSection from './components/ServiceSection';
 

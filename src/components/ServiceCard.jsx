@@ -19,7 +19,7 @@ const ServiceCard = ({ imgSrc, title, description, link }) => {
           style={{ backgroundColor: 'white' }}
         />
         <div className="card-body">
-          <h5 className="card-title text-center">{title}</h5>
+          <h5 className="card-title text-center" style={{fontWeight: 'bold'}}>{title} </h5>
           <p className="card-text text-center small py-2">{description}</p>
         </div>
         <div className="card-footer">
