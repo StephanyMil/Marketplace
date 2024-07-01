@@ -12,15 +12,17 @@ const ServiceSection = ({ title, description, services }) => {
         </p>
         <hr />
       </div>
-      <div className="row px-4">{services.map((service) => (
-          <ServiceCard
-            key={service.title}
-            imgSrc={service.imgSrc}
-            title={service.title}
-            description={service.description}
-            link={service.link}
-          />
-        ))}</div>
+      <div className="row px-4">
+      {services.map((service) => (
+        <ServiceCard
+          key={service.title}
+          imgSrc={service.imgSrc}
+          title={service.title}
+          description={service.description}
+          link={` ${service.link}`} 
+        />
+      ))}
+      </div>
     </div>
   );
 };

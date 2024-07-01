@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img
-            src='public/assets/logo-only-white.png'
+            src="public/assets/logo-only-white.png"
             alt="Logo"
             height="28"
             className="d-inline-block align-text-top"
@@ -16,7 +16,7 @@ const Navbar = () => {
           />
           Marketplace
         </Link>
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{ color: '#fff' }}>
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{fontSize: '16px', color: '#fff' }}>
           <li className="nav-item">
             <Link className="nav-link" to="/services">
               Meus Serviços
