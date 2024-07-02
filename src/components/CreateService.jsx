@@ -1,13 +1,35 @@
-// src/components/CreateService.jsx
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Importe Link e useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
+import { v4 as uuidv4 } from 'uuid';
 
 const CreateService = ({ serviceType }) => {
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
+    
+        const uuid = uuidv4();
+        const formData = new FormData(event.target);
+        const newService = {
+            uuid,
+            serviceType,
+            subdomain: formData.get('subdomain'),
+            user: formData.get('user'),
+            status: 'creating',
+            url: `${formData.get('subdomain')}.opendata.center`,
+        };
+    
+        // Salvar o novo serviço no localStorage
+        const storedServices = JSON.parse(localStorage.getItem('services')) || [];
+        localStorage.setItem('services', JSON.stringify([...storedServices, newService]));
+    
+        // Redirecionar para a página de detalhes
+        setTimeout(() => {
+            navigate(`/deployment/details/${uuid}`, {
+                state: newService,
+            });
+        }, 500);
     };
 
     return (

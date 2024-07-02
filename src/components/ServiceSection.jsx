@@ -1,4 +1,3 @@
-// src/components/ServiceSection.jsx
 import React from 'react';
 import ServiceCard from './ServiceCard';
 
