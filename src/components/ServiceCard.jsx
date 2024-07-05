@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ServiceCard = ({ imgSrc, title, description, link }) => {
   return (
     <div className="col-12 col-lg-3 col-xxl-2 py-2">
