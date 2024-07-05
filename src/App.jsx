@@ -2,11 +2,12 @@ import React from "react";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import ServiceSection from "./components/ServiceSection";
+import wordpress from "./assets/wordpress.svg";
 
 const App = () => {
   const webServices = [
     {
-      imgSrc: "src/assets/wordpress.svg",
+      imgSrc: <img src={wordpress}/>,
       title: "Wordpress",
       description:
         "Ótimos designs, recursos poderosos e a liberdade para construir o que você quiser.",
