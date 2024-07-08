@@ -58,8 +58,7 @@ const App = () => {
                 Escolha um serviço
               </h2>
               <p style={{ marginBottom: "1rem" }}>
-                Seu serviço terá redundância e load balancer dentro de um cluster
-                kubernetes
+                Seu serviço terá redundância e load balancer dentro de um cluster kubernetes
               </p>
             </div>
             <ServiceSection
