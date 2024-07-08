@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const MyServices = () => {
-    const [services, setServices] = useState([]);
+    const [services, setServices] = useState([]); //Inicializa os estados dos serviços
 
     useEffect(() => {
         const storedServices = JSON.parse(localStorage.getItem("services")) || [];
-        setServices(storedServices);
+        setServices(storedServices); //Atualiza o estado dos serviços com os serviços armazenados no localStorage
     }, []);
 
     return (

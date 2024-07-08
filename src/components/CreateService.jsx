@@ -4,10 +4,10 @@ import {v4 as uuidv4} from 'uuid';
 
 const CreateService = () => {
     const {serviceType} = useParams(); //Obter o serviceType da URL
-    const navigate = useNavigate();
+    const navigate = useNavigate(); //Obter a função de navegação
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault(); //Previne o comportamento padrão do formulário
         
         const uuid = uuidv4();
         const formData = new FormData(event.target);

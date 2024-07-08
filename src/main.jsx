@@ -10,13 +10,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/deployment" element={<MyServices />} />
+      <Route path="/" element={<App />} /> {/*Adicionar a rota para a página principal */}
+      <Route path="/deployment" element={<MyServices />} /> {/*Adicionar a rota para a página de criação de serviço */}
       <Route
         path="/deployment/create/:serviceType"
         element={<CreateService serviceType={':serviceType'} />}
-      /> 
-      <Route path="/deployment/details/:uuid" element={<ServiceDetails />} />
+      /> {/*Adicionar a rota para a página de detalhes do serviço*/}
+      <Route path="/deployment/details/:uuid" element={<ServiceDetails />} /> {/*Adicionar a rota para a página de detalhes do serviço*/}
     </Routes>
   </BrowserRouter>
 );
