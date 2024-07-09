@@ -12,9 +12,10 @@ describe('Marketplace', () => {
     cy.contains('Criar meu wordpress').click()
   })
 
-  it('When click in Criar meu Wordpress and fill out the Criação de serviço, a new Wordpress must be created', () => {
+  it('When click on Criar meu Wordpress and fill out the Criação de serviço, a new Wordpress must be created with the data entered and will be storage in Meus Serviços', () => {
     cy.visit('/')
     cy.contains('Criar meu Wordpress').click()
+    cy.contains('Criação de serviço wordpress').should('to.have.length', 1)
     cy.get('#subdomain').type('test')
     cy.get('#user').type('Testing')
     cy.get('#password').type('123456')
