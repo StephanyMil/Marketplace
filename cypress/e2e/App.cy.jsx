@@ -36,6 +36,15 @@ describe('Marketplace', () => {
       cy.contains('Web').should('to.have.length', 1)
       cy.contains('Banco de dados').should('to.have.length', 1)
     })
+
+    it('And I shoul see all the services available', () => {
+      cy.contains('Criar meu Wordpress').should('to.have.length', 1)
+      cy.contains('Criar meu ownCloud').should('to.have.length', 1)
+      cy.contains('Criar meu MinIO').should('to.have.length', 1)
+      cy.contains('Criar meu MariaDB').should('to.have.length', 1)
+      cy.contains('Criar meu MySQL').should('to.have.length', 1)
+      cy.contains('Criar meu PostgreSQL').should('to.have.length', 1)
+    })
   })
 
   describe('Creating a Wordpress service - failure', () => {
@@ -57,7 +66,7 @@ describe('Marketplace', () => {
     it('Then I should see an error message and stay on the same page', () => {
       cy.contains('Por favor preencha as informações obrigatórias para a criação do serviço.').should('to.have.length', 1)
     })
-    
+
     // Clear local storage after each test
     after(() => {
       cy.clearLocalStorage()
