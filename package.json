@@ -9,7 +9,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "web": "npx cypress open",
-    "test": "npx cypress run --browser chrome --headless"
+    "test": "npx cypress run --browser chrome",
+    "cypress:headless": "npx cypress run --browser chrome --headless"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
