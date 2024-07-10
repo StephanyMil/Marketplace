@@ -34,7 +34,7 @@ describe('Marketplace', () => {
     it('Then I should see the Marketplace page', () => {
       cy.contains('Escolha um serviço').should('to.have.length', 1)
       cy.contains('Web').should('to.have.length', 1)
-      cy.contains('Banco de dados').should('to.have.length', 1)
+      cy.contains('Banco de Dados').should('to.have.length', 1)
     })
 
     it('And I shoul see all the services available', () => {
@@ -105,7 +105,7 @@ describe('Marketplace', () => {
       cy.contains('Status').should('to.have.length', 1)
       cy.contains('Status do cluster').should('to.have.length', 1)
       cy.contains('Logs das instâncias').should('to.have.length', 1)
-      cy.contains('Detalhes').should('to.have.length', 1)
+      cy.get('.align-itens-start > :nth-child(2) > h3').contains('Detalhes').should('to.have.length', 1)
       cy.get('.align-itens-start > :nth-child(2) > .row > :nth-child(2)').contains('wordpress').should('to.have.length', 1)
       cy.get(':nth-child(4) > a').contains('test').should('to.have.length', 1)
     })
@@ -121,6 +121,14 @@ describe('Marketplace', () => {
       cy.contains('Meus Serviços').click()
     })
 
+    it('Then I should see the Meus Serviços page', () => {
+      cy.contains('Meus serviços').should('to.have.length', 1)
+      cy.contains('Uuid').should('to.have.length', 1)
+      cy.get('tr > :nth-child(2)').contains('Serviço').should('to.have.length', 1)
+      cy.contains('Status').should('to.have.length', 1)
+      cy.contains('URL').should('to.have.length', 1)
+    })
+
     it('And I click on the Wordpress service', () => {
       cy.get('tbody > :nth-child(1) > :nth-child(1) > a').click()
     })
@@ -131,7 +139,7 @@ describe('Marketplace', () => {
       cy.contains('Status').should('to.have.length', 1)
       cy.contains('Status do cluster').should('to.have.length', 1)
       cy.contains('Logs das instâncias').should('to.have.length', 1)
-      cy.contains('Detalhes').should('to.have.length', 1)
+      cy.get('.align-itens-start > :nth-child(2) > h3').contains('Detalhes').should('to.have.length', 1)
       cy.get('.align-itens-start > :nth-child(2) > .row > :nth-child(2)').contains('wordpress').should('to.have.length', 1)
       cy.get(':nth-child(4) > a').contains('test').should('to.have.length', 1)
     })
