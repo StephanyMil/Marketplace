@@ -27,6 +27,6 @@ jobs:
         working-directory: ./cypress
 
       - name: Run Cypress tests
-        run: npm run test
+        run: npm run test:headless
         working-directory: ./cypress
  
