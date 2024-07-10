@@ -28,6 +28,7 @@ jobs:
 
       -name: Run Marketplace
         run: npm run dev
+        working-directory: ./
 
       - name: Run Cypress tests
         run: npm run cypress:headless
