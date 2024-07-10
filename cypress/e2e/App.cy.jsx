@@ -57,6 +57,8 @@ describe('Marketplace', () => {
     it('Then I should see an error message and stay on the same page', () => {
       cy.contains('Por favor preencha as informações obrigatórias para a criação do serviço.').should('to.have.length', 1)
     })
+    
+    // Clear local storage after each test
     after(() => {
       cy.clearLocalStorage()
     })
