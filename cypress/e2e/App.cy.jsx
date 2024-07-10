@@ -29,7 +29,7 @@ describe('Marketplace', () => {
     cy.get('.align-itens-start > :nth-child(2) > .row > :nth-child(2)').contains('wordpress').should('to.have.length', 1)
     cy.get(':nth-child(4) > a').contains('test').should('to.have.length', 1)
     cy.contains('Meus Serviços').click()
-    cy.get('tr > :nth-child(1) > a').click()
+    cy.get('tbody > :nth-child(1) > :nth-child(1) > a').click()
     cy.contains('Detalhes da criação do serviço wordpress').should('to.have.length', 1)
     cy.contains('Status').should('to.have.length', 1)
     cy.contains('Status do cluster').should('to.have.length', 1)
