@@ -125,8 +125,10 @@ describe('Marketplace', () => {
       cy.contains('Meus serviços').should('to.have.length', 1)
       cy.contains('Uuid').should('to.have.length', 1)
       cy.get('tr > :nth-child(2)').contains('Serviço').should('to.have.length', 1)
+      cy.get('tbody > tr > :nth-child(2)').contains('wordpress').should('to.have.length', 1)
       cy.contains('Status').should('to.have.length', 1)
       cy.contains('URL').should('to.have.length', 1)
+      cy.get('tbody > tr > :nth-child(4)').contains('test').should('to.have.length', 1)
     })
 
     it('And I click on the Wordpress service', () => {
