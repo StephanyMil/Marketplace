@@ -10,9 +10,11 @@
     "preview": "vite preview",
     "web": "npx cypress open",
     "test": "npx cypress run --browser chrome",
-    "cypress:headless": "npx cypress run --browser chrome --headless"
+    "cypress:headless": "npx cypress run --browser chrome --headless",
+    "coverage": "npx nyc report --reporter=text-summary"
   },
   "dependencies": {
+    "babel-plugin-istanbul": "^7.0.0",
     "bootstrap": "^5.3.3",
     "gitmoji-cli": "^9.3.0",
     "inquirer": "^9.3.5",
@@ -23,6 +25,7 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.12.41",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
@@ -31,6 +34,23 @@
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "vite": "^5.3.1"
+    "istanbul-lib-coverage": "^3.2.2",
+    "nyc": "^17.0.0",
+    "vite": "^5.3.1",
+    "vite-plugin-istanbul": "^6.0.2"
+  },
+  "nyc": {
+    "report-dir": "coverage",
+    "reporter": [
+      "text-summary",
+      "lcov"
+    ],
+    "include": [
+      "src/**"
+    ],
+    "exclude": [
+      "cypress/**"
+    ],
+    "all": true
   }
 }
