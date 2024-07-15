@@ -33,6 +33,10 @@ jobs:
         working-directory: ./
 
       - name: Run Cypress tests
-        run: npm run cypress:headless
+        run: npm run test
+        working-directory: ./cypress
+
+      - name: Run Coverage
+        run: npm run coverage
         working-directory: ./cypress
  
