@@ -1,8 +1,10 @@
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import {v4 as uuidv4} from 'uuid';
+import { useTranslation } from "react-i18next";
 
 const CreateService = () => {
+    const {t} = useTranslation(); //Obter a função de tradução
     const {serviceType} = useParams(); //Obter o serviceType da URL
     const navigate = useNavigate(); //Obter a função de navegação
 
@@ -37,14 +39,14 @@ const CreateService = () => {
             <Navbar />
             <div className="container-fluid mt-4">
                 <div className="row">
-                    <h2>Criação de serviço {serviceType}</h2>
+                    <h2>{t("create_service")} {serviceType}</h2>
                     <hr />
                 </div>
             </div>
             <div className="container mt-4">
                 <div className="row">
                     <p className="lead pb-3">
-                        Por favor preencha as informações obrigatórias para a criação do serviço.
+                        {t("fill_required_information")}
                     </p>
                 </div>
                 <form
@@ -61,7 +63,7 @@ const CreateService = () => {
                     />
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="subdomain" className="form-label">
-                            Subdomínio
+                            {t("subdomain")}:
                         </label>
                         <div className="input-group">
                             <input
@@ -75,13 +77,13 @@ const CreateService = () => {
                             <div className="input-group-text">.opendata.center</div>
                         </div>
                         <div id="subdomainHelp" className="form-text">
-                            Informe o nome do subdomínio do seu serviço, {" "}
-                            <a href="#">precisa utilizar um domínio seu?</a>
+                            {t("subdomain_help")} {" "}
+                            <a href="#">{t("need_your_own_domain")}</a>
                         </div>
                     </div>
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="user" className="form-label">
-                            Nome de usuário:
+                            {t("user")}
                         </label>
                         <input
                             type="text"
@@ -94,7 +96,7 @@ const CreateService = () => {
                     </div>
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="password" className="form-label">
-                            Senha do usuário:
+                            {t("password")}
                         </label>
                         <input
                             type="password"
@@ -107,7 +109,7 @@ const CreateService = () => {
                     </div>
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="passwordConfirmation" className="form-label">
-                            Confirme a sua senha:
+                            {t("password_confirmation")}
                         </label>
                         <input
                             type="password"
@@ -120,7 +122,7 @@ const CreateService = () => {
                     </div>
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="storage" className="form-label">
-                            Tamanho do volume de dados:
+                            {t("storage")}
                         </label>
                         <div className="input-group">
                             <input
@@ -139,7 +141,7 @@ const CreateService = () => {
                     <div className="col-12"/>
                     <div className="col-12 col-lg-6 col-xl-3 mb-3">
                         <button type="submit" className="btn btn-lg btn-success w-100">
-                            <i className="bi bi-rocket-takeoff"></i> Criar meu{" "}
+                            <i className="bi bi-rocket-takeoff"></i> {t("button")}{" "}
                             {serviceType}
                         </button>
                     </div>

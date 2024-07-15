@@ -1,27 +1,28 @@
 import "./index.css";
 import Navbar from "./components/Navbar";
 import ServiceSection from "./components/ServiceSection";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
+  const { t } = useTranslation();
   const webServices = [
     {
       imgSrc: "src/assets/wordpress.svg",
-      title: "Wordpress",
+      title: "wordpress",
       description:
-        "Ótimos designs, recursos poderosos e a liberdade para construir o que você quiser.",
+        "wordpress_description",
       link: "/deployment/create/wordpress",
     },
     {
       imgSrc: "src/assets/owncloud.svg",
-      title: "ownCloud",
-      description: "Serviço de armazenamento e sincronização de arquivos.",
+      title: "owncloud",
+      description: "owncloud_description",
       link: "/deployment/create/owncloud",
     },
     {
       imgSrc: "src/assets/minio.svg",
-      title: "MinIO",
-      description:
-        "Serviço de Object Storage distribuído de alto desempenho, que é projetado para infraestrutura de nuvem privada em larga escala, 100% compativel com bibliotecas que usam S3.",
+      title: "minio",
+      description: "minio_description",
       link: "/deployment/create/minio",
     },
   ];
@@ -29,20 +30,20 @@ const App = () => {
   const databaseServices = [
     {
       imgSrc: "src/assets/mariadb.svg",
-      title: "MariaDB",
-      description: "Banco de dados relacional fork do MySQL.",
+      title: "mariadb",
+      description: "mariadb_description",
       link: '/deployment/create/mariadb-11',
     },
     {
       imgSrc: "src/assets/mysql.svg",
-      title: "MySQL",
-      description: "Banco de dados relacional mais popular",
+      title: "mysql",
+      description: "mysql_description",
       link: "/deployment/create/mysql",
     },
     {
       imgSrc: "src/assets/postgresql.svg",
-      title: "PostgreSQL",
-      description: "Banco de dados relacional com foco em desempenho",
+      title: "postgresql",
+      description: "postgresql_description",
       link: "/deployment/create/postgresql",
     },
   ];
@@ -55,20 +56,20 @@ const App = () => {
           <div className="row">
             <div className="col-12">
               <h2 style={{ fontWeight: "bold", marginBottom: "1rem" }}>
-                Escolha um serviço
+                {t("choose_service")}
               </h2>
               <p style={{ marginBottom: "1rem" }}>
-                Seu serviço terá redundância e load balancer dentro de um cluster kubernetes
+                {t("service_has_redundancy")}
               </p>
             </div>
             <ServiceSection
-              title="Web"
-              description="Aplicações web"
+              title={t("web")}
+              description={t("web_description")}
               services={webServices}
             />
             <ServiceSection
-              title="Banco de Dados"
-              description="Instância de bancos de dados"
+              title={t("database")}
+              description={t("database_description")}
               services={databaseServices}
             />
           </div>

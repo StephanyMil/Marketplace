@@ -8,7 +8,7 @@ describe('Marketplace', () => {
     })
 
     it('When I click on Meus Serviços', () => {
-      cy.contains('Meus Serviços').click()
+      cy.get('.nav-link').click()
       cy.url().should('include', '/deployment')
     })
 
@@ -34,17 +34,11 @@ describe('Marketplace', () => {
 
     it('Then I should see the Marketplace page', () => {
       cy.contains('Escolha um serviço').should('to.have.length', 1)
-      cy.contains('Web').should('to.have.length', 1)
-      cy.contains('Banco de Dados').should('to.have.length', 1)
+      cy.get('h3').should('to.have.length', 2)
     })
 
     it('And I shoul see all the services available', () => {
-      cy.contains('Criar meu Wordpress').should('to.have.length', 1)
-      cy.contains('Criar meu ownCloud').should('to.have.length', 1)
-      cy.contains('Criar meu MinIO').should('to.have.length', 1)
-      cy.contains('Criar meu MariaDB').should('to.have.length', 1)
-      cy.contains('Criar meu MySQL').should('to.have.length', 1)
-      cy.contains('Criar meu PostgreSQL').should('to.have.length', 1)
+      cy.get('.card').should('to.have.length', 6)
     })
   })
 
@@ -101,7 +95,7 @@ describe('Marketplace', () => {
     })
 
     it('Then I should see the Detalhes da criação do serviço wordpress page', () => {
-      cy.contains('Detalhes da criação do serviço wordpress').should('to.have.length', 1)
+      cy.get('h2').should('to.have.length', 1)
       cy.contains('Instância:').should('to.have.length', 1)
       cy.contains('Status').should('to.have.length', 1)
       cy.get('.alert-info').should('to.have.length', 1)
@@ -121,7 +115,7 @@ describe('Marketplace', () => {
     })
 
     it('When I click on Meus Serviços', () => {
-      cy.contains('Meus Serviços').click()
+      cy.get('.nav-link').click()
     })
 
     it('Then I should see the Meus Serviços page', () => {
@@ -139,7 +133,7 @@ describe('Marketplace', () => {
     })
 
     it('Then I should see the Detalhes da criação do serviço wordpress page', () => {
-      cy.contains('Detalhes da criação do serviço wordpress').should('to.have.length', 1)
+      cy.get('h2').should('to.have.length', 1)
       cy.contains('Instância:').should('to.have.length', 1)
       cy.contains('Status').should('to.have.length', 1)
       cy.contains('Status do cluster').should('to.have.length', 1)

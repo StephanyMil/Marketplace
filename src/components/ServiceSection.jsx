@@ -1,21 +1,23 @@
 import ServiceCard from "./ServiceCard";
+import { useTranslation } from "react-i18next";
 
-const ServiceSection = ({title, description, services}) => {
-    return ( 
+const ServiceSection = ({ title, description, services }) => {
+    const { t } = useTranslation();
+    return (
         <div className="col-12 md-4">
             <div className="row px-4">
-                <h3 style={{fontWeight: "bold"}}>{title}</h3>
-                <p className="lead" style={{marginBottom: "1rem"}}>{description}</p>
+                <h3 style={{ fontWeight: "bold" }}>{t(title)}</h3>
+                <p className="lead" style={{ marginBottom: "1rem" }}>{t(description)}</p>
                 <hr />
             </div>
             <div className="row px-4">
                 {services.map((service) => (
                     <ServiceCard
-                        key={service.title}
+                        key={service.title} // Use service.title como key
                         imgSrc={service.imgSrc}
-                        title={service.title}
-                        description={service.description}
-                        link={`${service.link}`}
+                        title={t(service.title)}
+                        description={t(service.description)}
+                        link={service.link}
                     />
                 ))}
             </div>

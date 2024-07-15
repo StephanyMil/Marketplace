@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 const ServiceCard = ({ imgSrc, title, description, link }) => {
+  const { t } = useTranslation();
   return (
     <div className="col-12 col-lg-3 col-xxl-2 py-2">
       <div
@@ -16,8 +19,8 @@ const ServiceCard = ({ imgSrc, title, description, link }) => {
           style={{ backgroundColor: 'white' }}
         />
         <div className="card-body">
-          <h5 className="card-title text-center" style={{fontWeight: 'bold'}}>{title} </h5>
-          <p className="card-text text-center small py-2">{description}</p>
+          <h5 className="card-title text-center" style={{fontWeight: 'bold'}}>{t(title)} </h5>
+          <p className="card-text text-center small py-2">{t(description)}</p>
         </div>
         <div className="card-footer">
           <a
@@ -25,7 +28,7 @@ const ServiceCard = ({ imgSrc, title, description, link }) => {
             className="btn btn-success w-100"
             style={{ color: '#fff' }}
           >
-            <i className="bi bi-rocket-takeoff"></i> Criar meu {title}
+            <i className="bi bi-rocket-takeoff"></i> {t('button')} {t(title)}
           </a>
         </div>
       </div>

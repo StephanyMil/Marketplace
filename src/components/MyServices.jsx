@@ -1,8 +1,10 @@
 import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import { useTranslation } from "react-i18next";
 
 const MyServices = () => {
+    const { t } = useTranslation();
     const [services, setServices] = useState([]); //Inicializa os estados dos serviços
 
     useEffect(() => {
@@ -15,17 +17,17 @@ const MyServices = () => {
             <Navbar />
             <div className="container-fluid mt-4">
                 <div className="row">
-                    <h2>Meus serviços</h2>
+                    <h2>{t("my_services")}</h2>
                     <hr />
                 </div>
                 <div className="col-12">
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Uuid</th>
-                                <th>Serviço</th>
-                                <th>Status</th>
-                                <th>URL</th>
+                                <th>{t("uuid")}</th>
+                                <th>{t("service")}</th>
+                                <th>{t("status")}</th>
+                                <th>{t("url")}</th>
                             </tr>
                         </thead>
                         <tbody>

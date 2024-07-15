@@ -5,18 +5,21 @@ import App from './App';
 import MyServices from './components/MyServices';
 import CreateService from './components/CreateService';
 import ServiceDetails from './components/ServiceDetails';
+import i18next from './i18.js';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} /> {/*Adicionar a rota para a página principal */}
-      <Route path="/deployment" element={<MyServices />} /> {/*Adicionar a rota para a página de criação de serviço */}
-      <Route
-        path="/deployment/create/:serviceType"
-        element={<CreateService serviceType={':serviceType'} />}
-      /> {/*Adicionar a rota para a página de detalhes do serviço*/}
-      <Route path="/deployment/details/:uuid" element={<ServiceDetails />} /> {/*Adicionar a rota para a página de detalhes do serviço*/}
-    </Routes>
-  </BrowserRouter>
-);
+i18next.init().then(() => {
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} /> {/*Adicionar a rota para a página principal */}
+        <Route path="/deployment" element={<MyServices />} /> {/*Adicionar a rota para a página de criação de serviço */}
+        <Route
+          path="/deployment/create/:serviceType"
+          element={<CreateService serviceType={':serviceType'} />}
+        /> {/*Adicionar a rota para a página de detalhes do serviço*/}
+        <Route path="/deployment/details/:uuid" element={<ServiceDetails />} /> {/*Adicionar a rota para a página de detalhes do serviço*/}
+      </Routes>
+    </BrowserRouter>
+  );
+});
