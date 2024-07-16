@@ -8,7 +8,7 @@ i18next
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    supportedLngs: ['pt-BR', 'en-US', 'es', 'fr', 'de'],
+    supportedLngs: ['pt-BR', 'en-US', 'es', 'fr', 'de', 'it'],
     fallbackLng: 'pt-BR',
     detection: {
       order: ['navigator', 'querystring'],
