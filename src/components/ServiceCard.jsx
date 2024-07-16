@@ -28,7 +28,7 @@ const ServiceCard = ({ imgSrc, title, description, link }) => {
             className="btn btn-success w-100"
             style={{ color: '#fff' }}
           >
-            <i className="bi bi-rocket-takeoff"></i> {t('button')} {t(title)}
+            <i className="bi bi-rocket-takeoff"></i> {t("Create my")} {t(title)}
           </a>
         </div>
       </div>

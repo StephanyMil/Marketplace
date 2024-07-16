@@ -39,14 +39,14 @@ const CreateService = () => {
             <Navbar />
             <div className="container-fluid mt-4">
                 <div className="row">
-                    <h2>{t("create_service")} {serviceType}</h2>
+                    <h2>{t("Create service")} {serviceType}</h2>
                     <hr />
                 </div>
             </div>
             <div className="container mt-4">
                 <div className="row">
                     <p className="lead pb-3">
-                        {t("fill_required_information")}
+                        {t("Please fill in the required information to create the service.")}
                     </p>
                 </div>
                 <form
@@ -63,7 +63,7 @@ const CreateService = () => {
                     />
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="subdomain" className="form-label">
-                            {t("subdomain")}:
+                            {t("Subdomain")}:
                         </label>
                         <div className="input-group">
                             <input
@@ -77,13 +77,13 @@ const CreateService = () => {
                             <div className="input-group-text">.opendata.center</div>
                         </div>
                         <div id="subdomainHelp" className="form-text">
-                            {t("subdomain_help")} {" "}
-                            <a href="#">{t("need_your_own_domain")}</a>
+                            {t("Enter the subdomain name for your service,")} {" "}
+                            <a href="#">{t("do you need to use your own domain?")}</a>
                         </div>
                     </div>
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="user" className="form-label">
-                            {t("user")}
+                            {t("Username:")}
                         </label>
                         <input
                             type="text"
@@ -96,7 +96,7 @@ const CreateService = () => {
                     </div>
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="password" className="form-label">
-                            {t("password")}
+                            {t("User password:")}
                         </label>
                         <input
                             type="password"
@@ -109,7 +109,7 @@ const CreateService = () => {
                     </div>
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="passwordConfirmation" className="form-label">
-                            {t("password_confirmation")}
+                            {t("Confirm your password:")}
                         </label>
                         <input
                             type="password"
@@ -122,7 +122,7 @@ const CreateService = () => {
                     </div>
                     <div className="col-12 col-xl-6 mb-3">
                         <label htmlFor="storage" className="form-label">
-                            {t("storage")}
+                            {t("Data volume size:")}
                         </label>
                         <div className="input-group">
                             <input
@@ -141,7 +141,7 @@ const CreateService = () => {
                     <div className="col-12"/>
                     <div className="col-12 col-lg-6 col-xl-3 mb-3">
                         <button type="submit" className="btn btn-lg btn-success w-100">
-                            <i className="bi bi-rocket-takeoff"></i> {t("button")}{" "}
+                            <i className="bi bi-rocket-takeoff"></i> {t("Create my")}{" "}
                             {serviceType}
                         </button>
                     </div>

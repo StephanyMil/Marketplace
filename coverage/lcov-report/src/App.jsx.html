@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -144,13 +144,15 @@
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">240x</span>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,27 +230,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import "./index.css";
 import Navbar from "./components/Navbar";
 import ServiceSection from "./components/ServiceSection";
+import { useTranslation } from "react-i18next";
 &nbsp;
 const App = () =&gt; {
+  const { t } = useTranslation();
   const webServices = [
     {
       imgSrc: "src/assets/wordpress.svg",
       title: "Wordpress",
       description:
-        "Ótimos designs, recursos poderosos e a liberdade para construir o que você quiser.",
+        "Great designs, powerful features and the freedom to build whatever you want.",
       link: "/deployment/create/wordpress",
     },
     {
       imgSrc: "src/assets/owncloud.svg",
       title: "ownCloud",
-      description: "Serviço de armazenamento e sincronização de arquivos.",
+      description: "File storage and synchronization service.",
       link: "/deployment/create/owncloud",
     },
     {
       imgSrc: "src/assets/minio.svg",
       title: "MinIO",
-      description:
-        "Serviço de Object Storage distribuído de alto desempenho, que é projetado para infraestrutura de nuvem privada em larga escala, 100% compativel com bibliotecas que usam S3.",
+      description: "High-performance distributed object storage service, designed for large-scale private cloud infrastructure, 100% compatible with libraries that use S3.",
       link: "/deployment/create/minio",
     },
   ];
@@ -257,19 +260,19 @@ const App = () =&gt; {
     {
       imgSrc: "src/assets/mariadb.svg",
       title: "MariaDB",
-      description: "Banco de dados relacional fork do MySQL.",
+      description: "Relational database fork of MySQL.",
       link: '/deployment/create/mariadb-11',
     },
     {
       imgSrc: "src/assets/mysql.svg",
       title: "MySQL",
-      description: "Banco de dados relacional mais popular",
+      description: "Most popular relational database",
       link: "/deployment/create/mysql",
     },
     {
       imgSrc: "src/assets/postgresql.svg",
       title: "PostgreSQL",
-      description: "Banco de dados relacional com foco em desempenho",
+      description: "Relational database with a focus on performance",
       link: "/deployment/create/postgresql",
     },
   ];
@@ -282,20 +285,20 @@ const App = () =&gt; {
           &lt;div className="row"&gt;
             &lt;div className="col-12"&gt;
               &lt;h2 style={{ fontWeight: "bold", marginBottom: "1rem" }}&gt;
-                Escolha um serviço
+                {t("Choose a service")}
               &lt;/h2&gt;
               &lt;p style={{ marginBottom: "1rem" }}&gt;
-                Seu serviço terá redundância e load balancer dentro de um cluster kubernetes
+                {t("Your service will have redundancy and load balancer inside a Kubernetes cluster")}
               &lt;/p&gt;
             &lt;/div&gt;
             &lt;ServiceSection
-              title="Web"
-              description="Aplicações web"
+              title={t("Web")}
+              description={t("Web Applications")}
               services={webServices}
             /&gt;
             &lt;ServiceSection
-              title="Banco de Dados"
-              description="Instância de bancos de dados"
+              title={t("Database")}
+              description={t("Database Instances")}
               services={databaseServices}
             /&gt;
           &lt;/div&gt;
@@ -313,7 +316,7 @@ export default App;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-15T11:41:30.002Z
+                at 2024-07-16T17:06:53.379Z
             </div>
         <script src="../prettify.js"></script>
         <script>

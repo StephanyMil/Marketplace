@@ -18,7 +18,7 @@ const Navbar = () => {
                 </Link>
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{fontSize: "16px", color: "#fff"}}>
                     <li className="nav-item">
-                        <Link to="/deployment" className="nav-link">{t("my_services_navbar")}</Link>
+                        <Link to="/deployment" className="nav-link">{t("My services")}</Link>
                     </li>
                 </ul>
             </div>

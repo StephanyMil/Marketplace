@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">95.83% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/23</span>
+                <span class='fraction'>23/24</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.44% </span>
+                <span class="strong">94.73% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/18</span>
+                <span class='fraction'>18/19</span>
             </div>
         
             
@@ -171,11 +171,15 @@
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">240x</span>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">240x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -282,8 +286,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useState } from "react"<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
 import {useParams} from "react-router-dom";
 import Navbar from "./Navbar";
+import { useTranslation } from "react-i18next";
 &nbsp;
 const ServiceDetails = () =&gt; {
+    const { t } = useTranslation();
     const {uuid} = useParams();
     const [service, setService] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -304,7 +310,7 @@ const ServiceDetails = () =&gt; {
         &lt;main&gt;
             &lt;Navbar /&gt;
             &lt;div className="container-fluid mt-4"&gt;
-            &lt;div className="alert alert-info"&gt;Carregando...&lt;/div&gt;
+            &lt;div className="alert alert-info"&gt;{t("Loading...")}&lt;/div&gt;
             &lt;/div&gt;
         &lt;/main&gt;
         );
@@ -315,7 +321,7 @@ const ServiceDetails = () =&gt; {
         &lt;main&gt;
             &lt;Navbar /&gt;
             &lt;div className="container-fluid mt-4"&gt;
-            &lt;div className="alert alert-danger"&gt;Serviço não encontrado&lt;/div&gt;
+            &lt;div className="alert alert-danger"&gt;{t("Service not found")}&lt;/div&gt;
             &lt;/div&gt;
         &lt;/main&gt;
         );
@@ -326,59 +332,59 @@ const ServiceDetails = () =&gt; {
             &lt;Navbar /&gt;
             &lt;div className="container-fluid mt-4"&gt;
                 &lt;div className="row"&gt;
-                    &lt;h2&gt;Detalhes da criação do serviço {service.service}&lt;/h2&gt;
-                    &lt;p className="lead"&gt;Instância: {service.uuid}&lt;/p&gt;
+                    &lt;h2&gt;{t("Create service")} {service.service}&lt;/h2&gt;
+                    &lt;p className="lead"&gt;{t("Instance: ") + service.uuid}&lt;/p&gt;
                     &lt;hr /&gt;
                 &lt;/div&gt;
                 &lt;div className="row align-itens-start"&gt;
                     &lt;div className="col-md-6"&gt;
                         &lt;h3&gt;Status&lt;/h3&gt;
                         &lt;div className="alert alert-info"&gt;
-                            Suas instâncias estão sendo criadas
+                            {t("Your instances are being created")}
                         &lt;/div&gt;
                         &lt;div className="table-responsive"&gt;
                             &lt;table className="table table-sm"&gt;
                                 &lt;thead&gt;
                                     &lt;tr&gt;
-                                        &lt;th&gt;Status dos recursos&lt;/th&gt;
-                                        &lt;th&gt;Atual&lt;/th&gt;
-                                        &lt;th&gt;Desejado&lt;/th&gt;
+                                        &lt;th&gt;{t("Resources status")}&lt;/th&gt;
+                                        &lt;th&gt;{t("Current")}&lt;/th&gt;
+                                        &lt;th&gt;{t("Desired")}&lt;/th&gt;
                                     &lt;/tr&gt;
                                 &lt;/thead&gt;
                                 &lt;tbody&gt;
                                     &lt;tr&gt;
-                                        &lt;td&gt;Instâncias:&lt;/td&gt;
+                                        &lt;td&gt;{t("Instances:")}&lt;/td&gt;
                                         &lt;td&gt;0&lt;/td&gt;
                                         &lt;td&gt;3&lt;/td&gt;
                                     &lt;/tr&gt;
                                 &lt;/tbody&gt;
                             &lt;/table&gt;
                         &lt;/div&gt;
-                        &lt;h3&gt;Status do cluster&lt;/h3&gt;
+                        &lt;h3&gt;{t("Cluster status")}&lt;/h3&gt;
                         &lt;div className="alert alert-success"&gt;
-                            Cluster está operando normalmente
+                            {t("Cluster is operating normally")}
                         &lt;/div&gt;
                     &lt;/div&gt;
                     &lt;div className="col-md-6"&gt;
-                        &lt;h3&gt;Detalhes&lt;/h3&gt;
+                        &lt;h3&gt;{t("Details")}&lt;/h3&gt;
                         &lt;dl className="row"&gt;
-                            &lt;dt className="col-sm-3"&gt;Serviço:&lt;/dt&gt;
+                            &lt;dt className="col-sm-3"&gt;{t("Service")}:&lt;/dt&gt;
                             &lt;dd className="col-sm-9"&gt;{service.service}&lt;/dd&gt;
                             
-                            &lt;dt className="col-sm-3"&gt;URL:&lt;/dt&gt;
+                            &lt;dt className="col-sm-3"&gt;{t("Uuid")}:&lt;/dt&gt;
                             &lt;dd className="col-sm-9"&gt;
                                 &lt;a href={service.url}&gt;{service.url}&lt;/a&gt;
                             &lt;/dd&gt;
 &nbsp;
-                            &lt;dt className="col-sm-3"&gt;Porta(s):&lt;/dt&gt;
+                            &lt;dt className="col-sm-3"&gt;{t("Port(s):")}&lt;/dt&gt;
                             &lt;dd className="col-sm-9"&gt;80/443&lt;/dd&gt;
 &nbsp;
-                            &lt;dt className="col-sm-3"&gt;Cluster:&lt;/dt&gt;
+                            &lt;dt className="col-sm-3"&gt;{t("Cluster:")}&lt;/dt&gt;
                             &lt;dd className="col-sm-9"&gt;SP1&lt;/dd&gt;
                         &lt;/dl&gt;
                     &lt;/div&gt;
                     &lt;hr /&gt;
-                    &lt;h3&gt;Logs das instâncias&lt;/h3&gt;
+                    &lt;h3&gt;{t("Service logs")}&lt;/h3&gt;
                     &lt;div className="alert"&gt;&lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -394,7 +400,7 @@ export default ServiceDetails;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-15T11:41:30.002Z
+                at 2024-07-16T17:06:53.379Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

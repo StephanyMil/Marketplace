@@ -17,17 +17,17 @@ const MyServices = () => {
             <Navbar />
             <div className="container-fluid mt-4">
                 <div className="row">
-                    <h2>{t("my_services")}</h2>
+                    <h2>{t("My Services")}</h2>
                     <hr />
                 </div>
                 <div className="col-12">
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>{t("uuid")}</th>
-                                <th>{t("service")}</th>
-                                <th>{t("status")}</th>
-                                <th>{t("url")}</th>
+                                <th>{t("Uuid")}</th>
+                                <th>{t("Service")}</th>
+                                <th>{t("Status")}</th>
+                                <th>{t("URL")}</th>
                             </tr>
                         </thead>
                         <tbody>

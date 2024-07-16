@@ -8,21 +8,21 @@ const App = () => {
   const webServices = [
     {
       imgSrc: "src/assets/wordpress.svg",
-      title: "wordpress",
+      title: "Wordpress",
       description:
-        "wordpress_description",
+        "Great designs, powerful features and the freedom to build whatever you want.",
       link: "/deployment/create/wordpress",
     },
     {
       imgSrc: "src/assets/owncloud.svg",
-      title: "owncloud",
-      description: "owncloud_description",
+      title: "ownCloud",
+      description: "File storage and synchronization service.",
       link: "/deployment/create/owncloud",
     },
     {
       imgSrc: "src/assets/minio.svg",
-      title: "minio",
-      description: "minio_description",
+      title: "MinIO",
+      description: "High-performance distributed object storage service, designed for large-scale private cloud infrastructure, 100% compatible with libraries that use S3.",
       link: "/deployment/create/minio",
     },
   ];
@@ -30,20 +30,20 @@ const App = () => {
   const databaseServices = [
     {
       imgSrc: "src/assets/mariadb.svg",
-      title: "mariadb",
-      description: "mariadb_description",
+      title: "MariaDB",
+      description: "Relational database fork of MySQL.",
       link: '/deployment/create/mariadb-11',
     },
     {
       imgSrc: "src/assets/mysql.svg",
-      title: "mysql",
-      description: "mysql_description",
+      title: "MySQL",
+      description: "Most popular relational database",
       link: "/deployment/create/mysql",
     },
     {
       imgSrc: "src/assets/postgresql.svg",
-      title: "postgresql",
-      description: "postgresql_description",
+      title: "PostgreSQL",
+      description: "Relational database with a focus on performance",
       link: "/deployment/create/postgresql",
     },
   ];
@@ -56,20 +56,20 @@ const App = () => {
           <div className="row">
             <div className="col-12">
               <h2 style={{ fontWeight: "bold", marginBottom: "1rem" }}>
-                {t("choose_service")}
+                {t("Choose a service")}
               </h2>
               <p style={{ marginBottom: "1rem" }}>
-                {t("service_has_redundancy")}
+                {t("Your service will have redundancy and load balancer inside a Kubernetes cluster")}
               </p>
             </div>
             <ServiceSection
-              title={t("web")}
-              description={t("web_description")}
+              title={t("Web")}
+              description={t("Web Applications")}
               services={webServices}
             />
             <ServiceSection
-              title={t("database")}
-              description={t("database_description")}
+              title={t("Database")}
+              description={t("Database Instances")}
               services={databaseServices}
             />
           </div>
