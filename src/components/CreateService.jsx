@@ -61,66 +61,66 @@ const CreateService = () => {
                         value="75MUShttvFVBQHcUZDAR9Vad5kjoWA929wYOgA7z"
                         autoComplete="off"
                     />
-                    <div className="col-12 col-xl-6 mb-3">
-                        <label htmlFor="subdomain" className="form-label">
-                            {t("Subdomain")}:
-                        </label>
-                        <div className="input-group">
+                    <div className="row">
+                        <div className="col-12 col-md-6 mb-3">
+                            <label htmlFor="subdomain" className="form-label">
+                                {t("Subdomain")}:
+                            </label>
+                            <div className="input-group">
+                                <input
+                                    type="text"
+                                    id="subdomain"
+                                    name="subdomain"
+                                    className="form-control"
+                                    required
+                                    autoComplete="off"
+                                />
+                                <div className="input-group-text">.opendata.center</div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-md-6 mb-3">
+                            <label htmlFor="user" className="form-label">
+                                {t("User name:")}
+                            </label>
                             <input
                                 type="text"
-                                id="subdomain"
-                                name="subdomain"
+                                id="user"
+                                name="user"
                                 className="form-control"
                                 required
                                 autoComplete="off"
                             />
-                            <div className="input-group-text">.opendata.center</div>
-                        </div>
-                        <div id="subdomainHelp" className="form-text">
-                            {t("Enter the subdomain name for your service,")} {" "}
-                            <a href="#">{t("do you need to use your own domain?")}</a>
                         </div>
                     </div>
-                    <div className="col-12 col-xl-6 mb-3">
-                        <label htmlFor="user" className="form-label">
-                            {t("Username:")}
-                        </label>
-                        <input
-                            type="text"
-                            id="user"
-                            name="user"
-                            className="form-control"
-                            required
-                            autoComplete="off"
-                        />
+                    <div className="row">
+                        <div className="col-12 col-md-6 mb-3">
+                            <label htmlFor="password" className="form-label">
+                                {t("User password:")}
+                            </label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                className="form-control"
+                                required
+                                autoComplete="off"
+                            />
+                        </div>
+                        <div className="col-12 col-md-6 mb-3">
+                            <label htmlFor="passwordConfirmation" className="form-label">
+                                {t("Confirm your password:")}
+                            </label>
+                            <input
+                                type="password"
+                                id="passwordConfirmation"
+                                name="passwordConfirmation"
+                                className="form-control"
+                                required
+                                autoComplete="off"
+                            />
+                        </div>
                     </div>
-                    <div className="col-12 col-xl-6 mb-3">
-                        <label htmlFor="password" className="form-label">
-                            {t("User password:")}
-                        </label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            className="form-control"
-                            required
-                            autoComplete="off"
-                        />
-                    </div>
-                    <div className="col-12 col-xl-6 mb-3">
-                        <label htmlFor="passwordConfirmation" className="form-label">
-                            {t("Confirm your password:")}
-                        </label>
-                        <input
-                            type="password"
-                            id="passwordConfirmation"
-                            name="passwordConfirmation"
-                            className="form-control"
-                            required
-                            autoComplete="off"
-                        />
-                    </div>
-                    <div className="col-12 col-xl-6 mb-3">
+                    <div className="col-12 col-xl-3 mb-3">
                         <label htmlFor="storage" className="form-label">
                             {t("Data volume size:")}
                         </label>
