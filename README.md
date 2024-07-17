@@ -34,9 +34,11 @@ Este projeto é um marketplace de serviços desenvolvido com React e TypeScript.
    cd marketplace
 
 2. **Instale as dependências:**
+    ```bash
     npm install
 
 3. **Execute o servidor de desenvolvimento:**
+    ```bash
     npm run dev
 
 A aplicação estará disponível em http://localhost:3000/.
