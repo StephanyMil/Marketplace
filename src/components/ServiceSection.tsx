@@ -1,7 +1,7 @@
 import ServiceCard from "./ServiceCard";
 import { useTranslation } from "react-i18next";
 
-const ServiceSection = ({ title, description, services }) => {
+const ServiceSection = ({ title, description, services }: { title: string, description: string, services: any[] }) => {
     const { t } = useTranslation();
     return (
         <div className="col-12 md-4">

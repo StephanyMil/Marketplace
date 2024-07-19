@@ -21,7 +21,7 @@
     "Please fill in the required information to create the service.": "Veuillez remplir les informations requises pour créer le service.",
     "Subdomain": "Sous-domaine",
     "Enter the subdomain name for your service,": "Entrez le nom du sous-domaine de votre service,",
-    "User name:": "Nom d'utilisateur :",
+    "Username": "Nom d'utilisateur :",
     "User password:": "Mot de passe de l'utilisateur :",
     "Confirm your password:": "Confirmez votre mot de passe :",
     "Data volume size:": "Taille du volume de données :",

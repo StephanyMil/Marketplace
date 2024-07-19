@@ -1,39 +1,54 @@
+import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { useTranslation } from "react-i18next";
 
-const CreateService = () => {
-    const {t} = useTranslation(); //Obter a função de tradução
-    const {serviceType} = useParams(); //Obter o serviceType da URL
-    const navigate = useNavigate(); //Obter a função de navegação
+interface Service {
+    uuid: string;
+    service: string;
+    subdomain: string;
+    user: string;
+    status: string;
+    url: string;
+}
 
-    const handleSubmit = (event) => {
-        event.preventDefault(); //Previne o comportamento padrão do formulário
-        
+const CreateService: React.FC = () => {
+    const { t } = useTranslation(); // Obter a função de tradução
+    const { serviceType } = useParams<{ serviceType: string }>(); // Obter o serviceType da URL
+    const navigate = useNavigate(); // Obter a função de navegação
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault(); // Previne o comportamento padrão do formulário
+
         const uuid = uuidv4();
-        const formData = new FormData(event.target);
-        const newService = {
+        const formData = new FormData(event.currentTarget);
+        const newService: Service = {
             uuid,
-            service: serviceType,
-            subdomain: formData.get("subdomain"),
-            user: formData.get("user"),
+            service: serviceType ?? "",
+            subdomain: formData.get("subdomain")?.toString() ?? "",
+            user: formData.get("user")?.toString() ?? "",
             status: "0",
             url: `${formData.get("subdomain")}.opendata.center`,
         };
 
+        console.log("New Service:", newService);
+
         // Salvar o novo serviço no localStorage
-        const services = JSON.parse(localStorage.getItem("services")) || [];
+        const services: Service[] = JSON.parse(localStorage.getItem("services") || "[]");
         localStorage.setItem("services", JSON.stringify([...services, newService]));
+
+        console.log("Services saved to localStorage");
 
         // Redirecionar para a página de detalhes do serviço
         setTimeout(() => {
+            console.log("Navigating to:", `/deployment/details/${uuid}`);
             navigate(`/deployment/details/${uuid}`, {
                 state: newService,
             });
         }, 500);
     };
-    
+
     return (
         <main>
             <Navbar />
@@ -55,7 +70,7 @@ const CreateService = () => {
                     method="post"
                     className="row gy-2"
                 >
-                    <imput
+                    <input
                         type="hidden"
                         name="token"
                         value="75MUShttvFVBQHcUZDAR9Vad5kjoWA929wYOgA7z"
@@ -80,7 +95,7 @@ const CreateService = () => {
                         </div>
                         <div className="col-12 col-md-6 mb-3">
                             <label htmlFor="user" className="form-label">
-                                {t("User name:")}
+                                {t("Username")}:
                             </label>
                             <input
                                 type="text"
@@ -131,14 +146,14 @@ const CreateService = () => {
                                 max="30"
                                 className="form-control"
                                 id="storage"
-                                value="5"
+                                defaultValue="5"
                                 required
                                 autoComplete="off"
                             />
                             <div className="input-group-text">GB</div>
                         </div>
                     </div>
-                    <div className="col-12"/>
+                    <div className="col-12" />
                     <div className="col-12 col-lg-6 col-xl-3 mb-3">
                         <button type="submit" className="btn btn-lg btn-success w-100">
                             <i className="bi bi-rocket-takeoff"></i> {t("Create my")}{" "}
@@ -148,7 +163,7 @@ const CreateService = () => {
                 </form>
             </div>
         </main>
-    )
+    );
 }
 
 export default CreateService;

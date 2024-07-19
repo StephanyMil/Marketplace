@@ -1,6 +1,13 @@
 import { useTranslation } from "react-i18next";
 
-const ServiceCard = ({ imgSrc, title, description, link }) => {
+type ServiceCardProps = {
+  imgSrc: string;
+  title: string;
+  description: string;
+  link: string;
+};
+
+const ServiceCard = ({ imgSrc, title, description, link }: ServiceCardProps) => {
   const { t } = useTranslation();
   return (
     <div className="col-12 col-lg-3 col-xxl-2 py-2">

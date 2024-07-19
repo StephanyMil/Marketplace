@@ -1,15 +1,22 @@
-import {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useTranslation } from "react-i18next";
 
-const MyServices = () => {
+interface Service {
+    uuid: string;
+    service: string;
+    status: string;
+    url: string;
+}
+
+const MyServices: React.FC = () => {
     const { t } = useTranslation();
-    const [services, setServices] = useState([]); //Inicializa os estados dos serviços
+    const [services, setServices] = useState<Service[]>([]);
 
     useEffect(() => {
-        const storedServices = JSON.parse(localStorage.getItem("services")) || [];
-        setServices(storedServices); //Atualiza o estado dos serviços com os serviços armazenados no localStorage
+        const storedServices = JSON.parse(localStorage.getItem("services") || "[]") as Service[];
+        setServices(storedServices);
     }, []);
 
     return (
@@ -34,8 +41,7 @@ const MyServices = () => {
                             {services.map((service) => (
                                 <tr key={service.uuid}>
                                     <td>
-                                        <Link to={`/deployment/details/${service.uuid}`}>{service.uuid}
-                                        </Link>
+                                        <Link to={`/deployment/details/${service.uuid}`}>{service.uuid}</Link>
                                     </td>
                                     <td>{service.service}</td>
                                     <td>{service.status}</td>

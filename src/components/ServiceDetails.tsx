@@ -1,20 +1,29 @@
-import { useEffect, useState } from "react";
-import {useParams} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useTranslation } from "react-i18next";
 
-const ServiceDetails = () => {
+interface Service {
+    uuid: string;
+    service: string;
+    subdomain: string;
+    user: string;
+    status: string;
+    url: string;
+}
+
+const ServiceDetails: React.FC = () => {
     const { t } = useTranslation();
-    const {uuid} = useParams();
-    const [service, setService] = useState(null);
+    const { uuid } = useParams<{ uuid: string }>();
+    const [service, setService] = useState<Service | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const storedServices = JSON.parse(localStorage.getItem("services")) || [];
+        const storedServices: Service[] = JSON.parse(localStorage.getItem("services") || "[]");
         const serviceDetails = storedServices.find((s) => s.uuid === uuid);
 
         if (serviceDetails) {
-        setService(serviceDetails);
+            setService(serviceDetails);
         }
 
         setLoading(false);
@@ -22,23 +31,23 @@ const ServiceDetails = () => {
 
     if (loading) {
         return (
-        <main>
-            <Navbar />
-            <div className="container-fluid mt-4">
-            <div className="alert alert-info">{t("Loading...")}</div>
-            </div>
-        </main>
+            <main>
+                <Navbar />
+                <div className="container-fluid mt-4">
+                    <div className="alert alert-info">{t("Loading...")}</div>
+                </div>
+            </main>
         );
     }
 
     if (!service) {
         return (
-        <main>
-            <Navbar />
-            <div className="container-fluid mt-4">
-            <div className="alert alert-danger">{t("Service not found")}</div>
-            </div>
-        </main>
+            <main>
+                <Navbar />
+                <div className="container-fluid mt-4">
+                    <div className="alert alert-danger">{t("Service not found")}</div>
+                </div>
+            </main>
         );
     }
 
@@ -51,7 +60,7 @@ const ServiceDetails = () => {
                     <p className="lead">{t("Instance: ") + service.uuid}</p>
                     <hr />
                 </div>
-                <div className="row align-itens-start">
+                <div className="row align-items-start">
                     <div className="col-md-6">
                         <h3>Status</h3>
                         <div className="alert alert-info">
@@ -91,10 +100,10 @@ const ServiceDetails = () => {
                                 <a href={service.url}>{service.url}</a>
                             </dd>
 
-                            <dt className="col-sm-3">{t("Port(s):")}</dt>
+                            <dt className="col-sm-3">{t("Port(s)")}:</dt>
                             <dd className="col-sm-9">80/443</dd>
 
-                            <dt className="col-sm-3">{t("Cluster:")}</dt>
+                            <dt className="col-sm-3">{t("Cluster")}:</dt>
                             <dd className="col-sm-9">SP1</dd>
                         </dl>
                     </div>
